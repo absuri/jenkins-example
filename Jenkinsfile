@@ -13,7 +13,7 @@ pipeline {
         stage ('Testing Stage') {
 
             steps {
-                tool name: 'mvn3.6.1', type: 'maven'
+                tool name: 'mvn3.5.3', type: 'maven'
                     sh 'mvn test'
                 }
         }
