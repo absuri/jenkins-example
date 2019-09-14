@@ -5,27 +5,27 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                withMaven(maven : 'maven3.3.3') {
+                tool name: 'mvn3.6.1', type: 'maven'
                     sh 'mvn clean compile'
-                }
+                
             }
         }
 
         stage ('Testing Stage') {
 
             steps {
-                withMaven(maven : 'maven3.3.3') {
+                tool name: 'mvn3.6.1', type: 'maven'
                     sh 'mvn test'
-                }
+                
             }
         }
 
 
         stage ('install Stage') {
             steps {
-                withMaven(maven : 'maven3.3.3') {
+                tool name: 'mvn3.6.1', type: 'maven'
                     sh 'mvn install'
-                }
+                
             }
         }
     }
